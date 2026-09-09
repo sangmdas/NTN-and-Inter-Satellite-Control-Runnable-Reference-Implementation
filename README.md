@@ -277,11 +277,36 @@ This profile is additive. TT&C authentication, CCSDS protections, 3GPP NTN regis
 
 Authentication determines who or what supplied a command. Execution finality determines whether this exact command may create this RF, beam or forwarding effect at this sink now.
 
-## Rights and IPR notice
+Rights and IPR Notice
+Licence
 
-The source draft states that certain concepts are associated with pending applications in the DAS Protocols family, including PCT/IB2026/055615 and follow-on NTN-related filings, and that IETF disclosure should follow BCP 79.
+This repository (source code, tests, benchmark harness, and documentation) is released under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
 
-No software licence is selected in this package. Before public reuse is invited, the repository owner should choose an appropriate software licence and separately state any applicable patent-licensing position.
+You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit. Commercial use requires a separate licence from the repository owner. The full licence text is available at:
 
+https://creativecommons.org/licenses/by-nc/4.0/
+
+A LICENSE file containing the full CC BY-NC 4.0 legal code is included in this repository.
+
+Patent Position
+
+The architecture implemented here — Candidate Act, Non-Effective State, Protected Enforcement Domain, scoped non-bearer finality authority, and Finality Sink — is associated with pending patent applications in the DAS Protocols family, including PCT/IB2026/055615 and follow-on NTN- and satellite-related filings.
+
+The CC BY-NC 4.0 licence above covers copyright in this repository's code and documentation only. It does not grant, and should not be read as granting, any licence under the associated patent applications. Patent rights are held separately from the copyright licence and are not conveyed by non-commercial reuse of this code.
+
+IETF Disclosure and FRAND Default
+
+Concepts implemented in this repository are the subject of a companion Internet-Draft, draft-das-ntn-rf-execution-finality. IPR disclosure for that draft follows BCP 79 (RFC 8179).
+
+If any part of this architecture is adopted as part of IETF standards-track or widely-implemented specification work, the repository owner's default licensing position is FRAND (fair, reasonable, and non-discriminatory) terms for the patent claims reading on that standardized text, consistent with the IETF's BCP 79 disclosure framework. This default applies unless a separate written licensing statement says otherwise for a specific draft or specification.
+
+Summary
+	
+Code / documentation copyright	CC BY-NC 4.0 (non-commercial reuse, attribution required)
+Commercial use of code	Requires separate licence from the repository owner
+Patent rights (PCT/IB2026/055615 and related filings)	Reserved; not granted by the CC BY-NC licence
+IETF-standardized text	FRAND by default, per BCP 79, unless stated otherwise
+
+This notice supersedes any prior statement in this repository that no licence had been selected.
 **RF enable is not transmit authority.**
 
