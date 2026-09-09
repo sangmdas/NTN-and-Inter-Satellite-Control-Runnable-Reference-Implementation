@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ietf:params:json-schema:ntn-rf-finality:candidate-act:1",
+  "title": "SatelliteCandidateAct",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "object_type", "candidate_act_id", "act_type", "created_at", "expires_at", "vehicle", "grant_digest", "policy_state", "freshness", "finality_sink"],
+  "properties": {
+    "version": {"type": "string", "const": "1.0"},
+    "object_type": {"type": "string", "const": "satellite_candidate_act"},
+    "candidate_act_id": {"type": "string", "minLength": 16, "maxLength": 128},
+    "act_type": {"type": "string", "enum": ["SAT_RF_ENABLE", "UT_TX_ENABLE", "ISL_FORWARD", "BEAM_STEER", "GW_FEEDER", "HANDOVER_TX", "PAYLOAD_CMD", "OTHER"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "vehicle": {
+      "type": "object", "additionalProperties": false, "required": ["vehicle_id"],
+      "properties": {"vehicle_id": {"type": "string"}, "constellation_id": {"type": "string"}, "orbit_shell": {"type": "string"}}
+    },
+    "beam": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"beam_id": {"type": "string"}, "cell_id": {"type": "string"}, "pointing_ref": {"type": "string"}}
+    },
+    "radio": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "frequency_class": {"type": "string"}, "eirp_class": {"type": "string"},
+        "polarization": {"type": "string"}, "duration_ms": {"type": "integer", "minimum": 0}
+      }
+    },
+    "grant_digest": {
+      "type": "object", "additionalProperties": false, "required": ["algorithm", "value", "canonicalization"],
+      "properties": {
+        "algorithm": {"type": "string", "enum": ["SHA-256", "SHA-384", "SHA-512"]},
+        "value": {"type": "string"},
+        "canonicalization": {"type": "string", "enum": ["JCS", "implementation-defined", "NTN-EF-JCS-SUBSET-1"]}
+      }
+    },
+    "next_hop": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"hop_type": {"type": "string", "enum": ["ISL", "GATEWAY", "UT", "NONE"]}, "next_hop_id": {"type": "string"}}
+    },
+    "overflight": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"overflight_epoch": {"type": "integer", "minimum": 0}, "administration": {"type": "string"}, "license_profile_id": {"type": "string"}}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "source_type": {"type": "string", "enum": ["ground_noc", "onboard_scheduler", "ntn_cu", "ut_modem", "payload", "autonomy", "other"]},
+        "command_digest": {"type": "string"}
+      }
+    },
+    "policy_state": {
+      "type": "object", "additionalProperties": false, "required": ["policy_epoch", "revocation_epoch"],
+      "properties": {"policy_epoch": {"type": "integer", "minimum": 0}, "revocation_epoch": {"type": "integer", "minimum": 0}}
+    },
+    "freshness": {
+      "type": "object", "additionalProperties": false, "required": ["nonce"],
+      "properties": {"nonce": {"type": "string", "minLength": 16}, "sequence": {"type": "integer", "minimum": 0}}
+    },
+    "finality_sink": {
+      "type": "object", "additionalProperties": false, "required": ["sink_id", "sink_type"],
+      "properties": {
+        "sink_id": {"type": "string"},
+        "sink_type": {"type": "string", "enum": ["SAT_RF_ENABLE", "UT_TX_ENABLE", "ISL_FORWARD", "BEAM_STEER", "GW_FEEDER", "PAYLOAD_CMD", "OTHER"]}
+      }
+    }
+  }
+}
+

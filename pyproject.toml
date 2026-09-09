@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ntn-rf-execution-finality-reference"
+version = "0.1.0"
+description = "Runnable reference implementation of aperture-time execution finality for satellite, NTN, RF and inter-satellite control"
+requires-python = ">=3.10"
+authors = [{name = "Sangam Das"}]
+
+[project.scripts]
+ntn-finality-demo = "ntn_finality.demo:main"
+ntn-finality-benchmark = "ntn_finality.benchmark:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

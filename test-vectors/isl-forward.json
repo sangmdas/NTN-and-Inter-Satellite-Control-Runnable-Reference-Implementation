@@ -1,0 +1,17 @@
+{
+  "profile": "NTN-EF-1",
+  "canonicalization": "NTN-EF-JCS-SUBSET-1",
+  "digest_algorithm": "SHA-256",
+  "digest_encoding": "base64url-without-padding",
+  "command": {
+    "act_type": "ISL_FORWARD", "vehicle_id": "sat-12041", "constellation_id": "leo-mesh-a", "orbit_shell": "shell-550",
+    "beam_id": "", "cell_id": "", "pointing_ref": "isl-terminal-a",
+    "frequency_class": "OPTICAL_ISL", "eirp_class": "NOMINAL", "polarization": "RHCP", "duration_ms": 5,
+    "next_hop_type": "ISL", "next_hop_id": "sat-12042", "administration": "IN", "license_profile_id": "lic-in-ku-7",
+    "source_type": "onboard_scheduler", "sink_id": "sat-12041-isl-a", "sink_type": "ISL_FORWARD",
+    "grant_sequence": 441, "flow_digest": "flow-users-441", "slot_set": "slot-20:24", "command_link_state": "AVAILABLE"
+  },
+  "expected_canonical_utf8": "{\"act_type\":\"ISL_FORWARD\",\"beam\":{\"beam_id\":\"\",\"cell_id\":\"\",\"pointing_ref\":\"isl-terminal-a\"},\"next_hop\":{\"flow_digest\":\"flow-users-441\",\"hop_type\":\"ISL\",\"next_hop_id\":\"sat-12042\"},\"provenance\":{\"command_link_state\":\"AVAILABLE\",\"grant_sequence\":441,\"source_type\":\"onboard_scheduler\"},\"radio\":{\"duration_ms\":5,\"eirp_class\":\"NOMINAL\",\"frequency_class\":\"OPTICAL_ISL\",\"polarization\":\"RHCP\",\"slot_set\":\"slot-20:24\"},\"regulatory\":{\"administration\":\"IN\",\"license_profile_id\":\"lic-in-ku-7\"},\"sink\":{\"sink_id\":\"sat-12041-isl-a\",\"sink_type\":\"ISL_FORWARD\"},\"vehicle\":{\"constellation_id\":\"leo-mesh-a\",\"orbit_shell\":\"shell-550\",\"vehicle_id\":\"sat-12041\"}}",
+  "expected_digest": "DkjziQMDswdy9sFkg9pNqw3eSnvaM4I4rOgpy_UWk-4"
+}
+

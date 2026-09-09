@@ -1,0 +1,19 @@
+{
+  "warning": "Local software benchmark with in-memory SQLite and simulated hardware; not an RF timing, flight-qualification, or safety SLA.",
+  "draft_numeric_target": null,
+  "reference_engineering_targets": {"sink_p99_us": 1000, "full_local_path_p99_us": 5000, "status": "repository goals, not requirements from draft-das-ntn-rf-execution-finality-00"},
+  "environment": {
+    "python": "3.12.14", "implementation": "CPython", "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "sqlite": "3.53.1", "store": "SQLite :memory:", "authenticator": "HMAC-SHA-256 software",
+    "effect_adapter": "in-process non-radiating simulator", "act_type": "SAT_RF_ENABLE"
+  },
+  "iterations": 1000,
+  "warmup": 100,
+  "results": {
+    "prepare": {"min_us": 58.52, "mean_us": 75.89, "p50_us": 63.76, "p95_us": 113.04, "p99_us": 221.08, "max_us": 2206.18},
+    "ped_issue": {"min_us": 160.81, "mean_us": 227.09, "p50_us": 185.37, "p95_us": 425.92, "p99_us": 761.85, "max_us": 6620.07},
+    "sink_verify_consume_effect": {"min_us": 129.85, "mean_us": 181.12, "p50_us": 145.07, "p95_us": 254.18, "p99_us": 613.32, "max_us": 11033.73},
+    "total": {"min_us": 352.22, "mean_us": 484.1, "p50_us": 413.27, "p95_us": 738.07, "p99_us": 1574.27, "max_us": 11287.75}
+  }
+}
+
